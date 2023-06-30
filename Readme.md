@@ -1,4 +1,4 @@
-# Your Package Name
+# react-realtime-countdown-timer
 
 [![NPM Version](https://img.shields.io/npm/v/react-realtime-countdown-timer.svg)](https://www.npmjs.com/package/your-package-name)
 [![License](https://img.shields.io/npm/l/react-realtime-countdown-timer.svg)](https://github.com/AmirWorkplace/react-realtime-countdown-timer)
