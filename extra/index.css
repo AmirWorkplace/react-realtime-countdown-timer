@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pagination-link i {
+  @apply text-xl pt-1 leading-4;
+}
+.pagination-link {
+  @apply w-10 h-10 rounded-md bg-slate-200 flex items-center justify-center font-bold text-lg font-mono text-slate-700 duration-500 hover:bg-slate-300 hover:text-[#696cff] border border-solid border-slate-200 shadow-[0px_2px_4px_0px_rgba(0,0,0,0.12)];
+}
+
+.pagination-link.active {
+  @apply text-slate-100 bg-[#696cff] !shadow-[1px_3px_8px_0px_rgba(0,0,0,0.1)];
+}
+
+.pagination-link.active i {
+  @apply pt-0;
+}
+
+.pagination-li {
+  @apply p-1;
+}
+
+.pagination-container {
+  @apply p-5 border border-slate-200 bg-white border-solid shadow-[0px_4px_6px_0px_rgba(0,0,0,0.12)] rounded-md;
+}
+
+.pagination-title {
+  @apply font-mono font-bold text-sm text-slate-500 capitalize;
+}

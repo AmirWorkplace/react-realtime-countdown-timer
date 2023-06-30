@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="index.css">
+  <title>Cart</title>
+
+  <style>
+    .form-check-input:checked[type=checkbox] {
+      background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 10l3 3l6-6'/%3e%3c/svg%3e);
+    }
+
+    .form-check {
+      display: block;
+      min-height: 1.434375rem;
+      padding-left: 1.7em;
+      margin-bottom: 0.125rem;
+    }
+
+    .form-check .form-check-input {
+      float: left;
+    }
+
+    .form-check-input {
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: top;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border: 1px solid #004d9a;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .form-check-input[type=checkbox] {
+      border-radius: 0.25em;
+    }
+
+    .form-check-input:active {
+      filter: brightness(90%);
+    }
+
+    .form-check-input:focus {
+      border-color: rgba(249, 249, 255, 0.54);
+      outline: 0;
+      box-shadow: 0 0 0.25rem 0.05rem rgba(105, 108, 255, 0.1);
+    }
+
+    .form-check-input:checked {
+      background-color: #696cff;
+      border-color: rgba(105, 108, 255, 0.08);
+    }
+
+    .form-check-input:checked[type=checkbox] {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+    }
+
+    .form-check-input:checked[type=radio] {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='1.5' fill='%23fff'/%3e%3c/svg%3e");
+    }
+
+    .form-check-input[type=checkbox]:indeterminate {
+      background-color: rgba(105, 108, 255, 0.08);
+      border-color: rgba(105, 108, 255, 0.08);
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 10h8'/%3e%3c/svg%3e");
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cart-body">
+    <div class="cart-container w-full lex items-center justify-center p-6 bg-slate-100">
+      <div class="w-full h-auto flex flex-col-reverse lg:flex-row items-center justify-center">
+        <div class="cart-items-container flex flex-col gap-4">
+          <!-- @param Cart Product's single item showcase. (@STARTED) -->
+
+          <div
+            class="cart_item w-full h-auto rounded-md border border-slate-200 shadow-[0px_4px_6px_rgba(0,0,0,0.12px)] bg-white flex flex-col sm:flex-row items-center justify-center lg:gap-6"
+            id="cart_item_1">
+
+            <div class="flex w-full items-center justify-evenly flex-row gap-4 sm:block sm:w-auto">
+              <div class="cart-checkbox-and-img flex items-center justify-center w-auto h-auto p-4 gap-6 flex-row">
+                <label for="cart_checkbox" class="border-2 border-solid border-[#696cff] rounded-md">
+                  <input class="cart_checkbox form-check-input" type="checkbox" id="cart_checkbox">
+                </label>
+                <img src="" alt="Cart Picture" class="min-w-[80px] h-20 ring-1 rounded-md">
+              </div>
+              <div class="cart-product-name duration-200 text-slate-600 mt-2 leading-3 sm:!hidden">
+                <span class="product-name font-mono font-semibold pr-1 text-red-400 leading-4">Title:</span>
+                <span class="text-sm leading-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+              </div>
+            </div>
+
+            <div class="w-full flex flex-row justify-evenly items-center">
+              <div
+                class="cart-details sm:w-full flex lg:flex-row items-center justify-center flex-col sm:gap-5 pl-2 sm:pl-0">
+                <div class="cart-title w-full h-auto leading-3 ">
+                  <a href="#" class="cart-product-name duration-200 text-slate-600 hover:text-[#696cff]">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 text-[17px]">Name:</span>
+                    <span class="hover:text-[#696cff] hover:underline text-sm">
+                      Halloween Mysterious Book.
+                    </span>
+                  </a>
+                  <p class="cart-product-name duration-200 text-slate-600 mt-2 leading-3 hidden lg:block">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 leading-4">Title:</span>
+                    <span class="text-sm leading-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </span>
+                  </p>
+                </div>
+
+                <div class="cart-title w-full h-auto leading-4 mt-3">
+                  <p class="cart-product-name duration-200 text-slate-600">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 text-[17px]">Price:</span>
+                    <span class="font-bold text-[#696cff] product_price" id="product_price">1.00</span>
+                    <span class="text-sm leading-3"> bdt.</span>
+                  </p>
+
+                  <p class="cart-product-name duration-200 text-slate-600 mt-1 leading-3">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 leading-4">Available Qty:</span>
+                    <span class="text-sm">
+                      <span class="font-bold product_available_quantity" id="product_available_quantity">5</span> pcs
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="calculation-part lg:gap-10 p-2 flex flex-col lg:flex-row items-center justify-between">
+                <div class="cart-pdt-action">
+                  <div class="pdt-increment-decrement flex border-2 border-[#696cff99] rounded-md">
+                    <button id="product_decrement_btn"
+                      class="product_decrement_btn font-bold border-r-2 mr-1 rounded-tl rounded-bl px-2 bg-[#696cff50] text-red-500 py-1 border-[#696cff55]">-</button>
+                    <input type="text" readonly value="1" id="product_selected_quantity"
+                      class="product_selected_quantity w-16 font-semibold my-1 font-mono text-[#696cff] text-center pl-1 pt-1 h-6 border-none outline-none rounded-md">
+                    <button
+                      class="font-bold border-l-2 rounded-tr rounded-br px-2 bg-[#696cff50] py-1 border-[#696cff55] text-green-500 product_increment_btn"
+                      id="product_increment_btn">+</button>
+                  </div>
+                  <div class="flex mt-1 items-center justify-center">
+                    <p class="font-bold text-red-400">Total:</p>
+                    <span class="text-sm pl-1 pr-0.5 mt-1 text-[#696cff] font-semibold">৳</span>
+                    <span class="total-price text-sm pr-1 mt-1 text-[#696cff] font-semibold products_total_cost"
+                      id="products_total_cost">1.00</span>
+                  </div>
+                </div>
+                <div class="cart-dlt-btn flex items-center justify-center py-1 px-2">
+                  <div class="flex gap-3">
+                    <a href="#"
+                      class="w-9 h-9 bg-[#696cffcc] duration-300 hover:bg-[#696cff] text-slate-50 font-bold text-xl flex items-center justify-center rounded-full shadow-[1px_5px_10px_5px_rgba(0,0,0,0.1)]">
+                      <ion-icon name="create-outline"></ion-icon>
+                    </a>
+                    <a href="#"
+                      class="w-9 h-9 bg-red-400 duration-300 hover:bg-red-500 text-slate-50 font-bold text-xl flex items-center justify-center rounded-full shadow-[1px_5px_10px_5px_rgba(0,0,0,0.1)]">
+                      <ion-icon name="trash-outline"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- * @param Testing double components -->
+          <div
+            class="cart_item w-full h-auto rounded-md border border-slate-200 shadow-[0px_4px_6px_rgba(0,0,0,0.12px)] bg-white flex flex-col sm:flex-row items-center justify-center lg:gap-6"
+            id="cart_item_2">
+
+            <div class="flex w-full items-center justify-evenly flex-row gap-4 sm:block sm:w-auto">
+              <div class="cart-checkbox-and-img flex items-center justify-center w-auto h-auto p-4 gap-6 flex-row">
+                <label for="cart_checkbox" class="border-2 border-solid border-[#696cff] rounded-md">
+                  <input class="cart_checkbox form-check-input" type="checkbox" id="cart_checkbox">
+                </label>
+                <img src="" alt="Cart Picture" class="min-w-[80px] h-20 ring-1 rounded-md">
+              </div>
+              <div class="cart-product-name duration-200 text-slate-600 mt-2 leading-3 sm:!hidden">
+                <span class="product-name font-mono font-semibold pr-1 text-red-400 leading-4">Title:</span>
+                <span class="text-sm leading-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+              </div>
+            </div>
+
+            <div class="w-full flex flex-row justify-evenly items-center">
+              <div
+                class="cart-details sm:w-full flex lg:flex-row items-center justify-center flex-col sm:gap-5 pl-2 sm:pl-0">
+                <div class="cart-title w-full h-auto leading-3 ">
+                  <a href="#" class="cart-product-name duration-200 text-slate-600 hover:text-[#696cff]">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 text-[17px]">Name:</span>
+                    <span class="hover:text-[#696cff] hover:underline text-sm">
+                      Halloween Mysterious Book.
+                    </span>
+                  </a>
+                  <p class="cart-product-name duration-200 text-slate-600 mt-2 leading-3 hidden lg:block">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 leading-4">Title:</span>
+                    <span class="text-sm leading-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </span>
+                  </p>
+                </div>
+
+                <div class="cart-title w-full h-auto leading-4 mt-3">
+                  <p class="cart-product-name duration-200 text-slate-600">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 text-[17px]">Price:</span>
+                    <span class="font-bold text-[#696cff] product_price" id="product_price">1299.00</span>
+                    <span class="text-sm leading-3"> bdt.</span>
+                  </p>
+
+                  <p class="cart-product-name duration-200 text-slate-600 mt-1 leading-3">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 leading-4">Available Qty:</span>
+                    <span class="text-sm">
+                      <span class="font-bold product_available_quantity" id="product_available_quantity">30</span> pcs
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="calculation-part lg:gap-10 p-2 flex flex-col lg:flex-row items-center justify-between">
+                <div class="cart-pdt-action">
+                  <div class="pdt-increment-decrement flex border-2 border-[#696cff99] rounded-md">
+                    <button id="product_decrement_btn"
+                      class="product_decrement_btn font-bold border-r-2 mr-1 rounded-tl rounded-bl px-2 bg-[#696cff50] text-red-500 py-1 border-[#696cff55]">-</button>
+                    <input type="text" readonly value="1" id="product_selected_quantity"
+                      class="product_selected_quantity w-16 font-semibold my-1 font-mono text-[#696cff] text-center pl-1 pt-1 h-6 border-none outline-none rounded-md">
+                    <button
+                      class="font-bold border-l-2 rounded-tr rounded-br px-2 bg-[#696cff50] py-1 border-[#696cff55] text-green-500 product_increment_btn"
+                      id="product_increment_btn">+</button>
+                  </div>
+                  <div class="flex mt-1 items-center justify-center">
+                    <p class="font-bold text-red-400">Total:</p>
+                    <span class="text-sm pl-1 pr-0.5 mt-1 text-[#696cff] font-semibold">৳</span>
+                    <span class="total-price text-sm pr-1 mt-1 text-[#696cff] font-semibold products_total_cost"
+                      id="products_total_cost">1299.00</span>
+                  </div>
+                </div>
+                <div class="cart-dlt-btn flex items-center justify-center py-1 px-2">
+                  <div class="flex gap-3">
+                    <a href="#"
+                      class="w-9 h-9 bg-[#696cffcc] duration-300 hover:bg-[#696cff] text-slate-50 font-bold text-xl flex items-center justify-center rounded-full shadow-[1px_5px_10px_5px_rgba(0,0,0,0.1)]">
+                      <ion-icon name="create-outline"></ion-icon>
+                    </a>
+                    <a href="#"
+                      class="w-9 h-9 bg-red-400 duration-300 hover:bg-red-500 text-slate-50 font-bold text-xl flex items-center justify-center rounded-full shadow-[1px_5px_10px_5px_rgba(0,0,0,0.1)]">
+                      <ion-icon name="trash-outline"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="cart_item w-full h-auto rounded-md border border-slate-200 shadow-[0px_4px_6px_rgba(0,0,0,0.12px)] bg-white flex flex-col sm:flex-row items-center justify-center lg:gap-6"
+            id="cart_item_3">
+
+            <div class="flex w-full items-center justify-evenly flex-row gap-4 sm:block sm:w-auto">
+              <div class="cart-checkbox-and-img flex items-center justify-center w-auto h-auto p-4 gap-6 flex-row">
+                <label for="cart_checkbox" class="border-2 border-solid border-[#696cff] rounded-md">
+                  <input class="cart_checkbox form-check-input" type="checkbox" id="cart_checkbox">
+                </label>
+                <img src="" alt="Cart Picture" class="min-w-[80px] h-20 ring-1 rounded-md">
+              </div>
+              <div class="cart-product-name duration-200 text-slate-600 mt-2 leading-3 sm:!hidden">
+                <span class="product-name font-mono font-semibold pr-1 text-red-400 leading-4">Title:</span>
+                <span class="text-sm leading-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+              </div>
+            </div>
+
+            <div class="w-full flex flex-row justify-evenly items-center">
+              <div
+                class="cart-details sm:w-full flex lg:flex-row items-center justify-center flex-col sm:gap-5 pl-2 sm:pl-0">
+                <div class="cart-title w-full h-auto leading-3">
+                  <a href="#" class="cart-product-name duration-200 text-slate-600 hover:text-[#696cff]">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 text-[17px]">Name:</span>
+                    <span class="hover:text-[#696cff] hover:underline text-sm">
+                      Halloween Mysterious Book.
+                    </span>
+                  </a>
+                  <p class="cart-product-name duration-200 text-slate-600 mt-2 leading-3 hidden lg:block">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 leading-4">Title:</span>
+                    <span class="text-sm leading-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </span>
+                  </p>
+                </div>
+
+                <div class="cart-title w-full h-auto leading-4 mt-3">
+                  <p class="cart-product-name duration-200 text-slate-600">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 text-[17px]">Price:</span>
+                    <span class="font-bold text-[#696cff] product_price" id="product_price">1299.00</span>
+                    <span class="text-sm leading-3"> bdt.</span>
+                  </p>
+
+                  <p class="cart-product-name duration-200 text-slate-600 mt-1 leading-3">
+                    <span class="product-name font-mono font-semibold pr-1 text-red-400 leading-4">Available Qty:</span>
+                    <span class="text-sm">
+                      <span class="font-bold product_available_quantity" id="product_available_quantity">30</span> pcs
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="calculation-part lg:gap-10 p-2 flex flex-col lg:flex-row items-center justify-between">
+                <div class="cart-pdt-action">
+                  <div class="pdt-increment-decrement flex border-2 border-[#696cff99] rounded-md">
+                    <button id="product_decrement_btn"
+                      class="product_decrement_btn font-bold border-r-2 mr-1 rounded-tl rounded-bl px-2 bg-[#696cff50] text-red-500 py-1 border-[#696cff55]">-</button>
+                    <input type="text" readonly value="1" id="product_selected_quantity"
+                      class="product_selected_quantity w-16 font-semibold my-1 font-mono text-[#696cff] text-center pl-1 pt-1 h-6 border-none outline-none rounded-md">
+                    <button
+                      class="font-bold border-l-2 rounded-tr rounded-br px-2 bg-[#696cff50] py-1 border-[#696cff55] text-green-500 product_increment_btn"
+                      id="product_increment_btn">+</button>
+                  </div>
+                  <div class="flex mt-1 items-center justify-center">
+                    <p class="font-bold text-red-400">Total:</p>
+                    <span class="text-sm pl-1 pr-0.5 mt-1 text-[#696cff] font-semibold">৳</span>
+                    <span class="total-price text-sm pr-1 mt-1 text-[#696cff] font-semibold products_total_cost"
+                      id="products_total_cost">1299.00</span>
+                  </div>
+                </div>
+                <div class="cart-dlt-btn flex items-center justify-center py-1 px-2">
+                  <div class="flex gap-3">
+                    <a href="#"
+                      class="w-9 h-9 bg-[#696cffcc] duration-300 hover:bg-[#696cff] text-slate-50 font-bold text-xl flex items-center justify-center rounded-full shadow-[1px_5px_10px_5px_rgba(0,0,0,0.1)]">
+                      <ion-icon name="create-outline"></ion-icon>
+                    </a>
+                    <a href="#"
+                      class="w-9 h-9 bg-red-400 duration-300 hover:bg-red-500 text-slate-50 font-bold text-xl flex items-center justify-center rounded-full shadow-[1px_5px_10px_5px_rgba(0,0,0,0.1)]">
+                      <ion-icon name="trash-outline"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- @param Cart Product's single item showcase. (@ENDED) -->
+        </div>
+        <div class="main-calc-part max-w-md w-full bg-slate-100 relative">
+          <div class="w-full p-4 lg:fixed top-0 right-0 lg:max-w-md bg-slate-100 z-10">
+            <div
+              class="w-full h-auto rounded-md border border-slate-300 shadow-[0px_4px_6px_rgba(0,0,0,0.12px)] bg-white p-5">
+              <div
+                class="w-full flex items-center justify-center pt-2 pb-5 text-xl font-semibold font-mono text-slate-600 capitalize gap-3">
+                <span id="logo" class="bg-white w-20"></span>
+                product summery
+              </div>
+
+              <div class="coupon-and-vouchar">
+                <label for="coupon" class="uppercase text-sm font-medium text-slate-400">apply your coupon:</label>
+                <div class="flex gap-3">
+                  <input type="text" name="coupon" id="coupon"
+                    class="outline-none border-2 max-w-[18rem] w-full border-solid border-slate-300 rounded-md px-3 py-1 text-center font-semibold text-[17px] bg-slate-50 text-[#696cff] focus:border-[#696cff] font-mono"
+                    placeholder="apply here coupon">
+                  <button
+                    class="font-semibold pb-1 px-3 text-[16px] rounded-md text-slate-200 bg-[#696cff]">apply</button>
+                </div>
+              </div>
+              <div class="coupon-and-voucher mt-3">
+                <label for="coupon" class="uppercase text-sm font-medium text-slate-400">apply your coupon:</label>
+                <div class="flex gap-3">
+                  <input type="text" name="voucher" id="voucher"
+                    class="outline-none border-2 max-w-[18rem] w-full border-solid border-slate-300 rounded-md px-3 py-1 text-center font-semibold text-[17px] bg-slate-50 text-[#696cff] focus:border-[#696cff] font-mono"
+                    placeholder="apply here voucher">
+                  <button
+                    class="font-semibold pb-1 px-3 text-[16px] rounded-md text-slate-200 bg-[#696cff]">apply</button>
+                </div>
+              </div>
+
+              <p class="border-solid border-t w-full my-7 border-[#696cff]"> </p>
+
+              <div class="summery-item">
+                <p class="flex w-full justify-between duration-200 text-slate-600 mt-1 leading-3">
+                  <span class="product-name font-medium pr-1 text-[#696cff] leading-4 capitalize"> voucher
+                    discount:</span>
+                  <span class="leading-5">
+                    <span class="font-bold text-red-400 voucher_discount" id="voucher_discount">00.00</span>
+                    <span class="px-1 capitalize">bdt.</span>
+                  </span>
+                </p>
+                <p class="flex w-full justify-between duration-200 text-slate-600 mt-1 leading-3">
+                  <span class="product-name font-medium pr-1 text-[#696cff] leading-4 capitalize"> coupon
+                    discount:</span>
+                  <span class="leading-5">
+                    <span class="font-bold text-red-400 coupon_discount" id="coupon_discount">00.00</span>
+                    <span class="px-1 capitalize">bdt.</span>
+                  </span>
+                </p>
+                <p class="flex w-full justify-between duration-200 text-slate-600 mt-2 leading-5">
+                  <span class="product-name font-medium pr-1 text-[#696cff] leading-4">
+                    Total Quantity:</span>
+                  <span class="leading-3">
+                    <span class="font-bold text-red-400 subtotal_products_quantity"
+                      id="subtotal_products_quantity">00</span>
+                    <span class="px-1 capitalize">pcs</span>
+                  </span>
+                </p>
+                <p class="flex w-full justify-between duration-200 text-slate-600 mt-1 leading-5">
+                  <span class="product-name font-medium pr-1 text-[#696cff] leading-4">
+                    Total Prices:</span>
+                  <span class="leading-3">
+                    <span class="font-bold text-red-400 subtotal_products_prices"
+                      id="subtotal_products_prices">00.00</span>
+                    <span class="px-1 capitalize">bdt.</span>
+                  </span>
+                </p>
+                <p class="flex w-full justify-between duration-200 text-slate-600 mt-1 leading-5">
+                  <span class="product-name font-medium pr-1 text-[#696cff] leading-4">
+                    Delivery Charge:</span>
+                  <span class="leading-3">
+                    <span class="font-bold text-red-400 delivery_charge" id="delivery_charge">110.00</span>
+                    <span class="px-1 capitalize">bdt.</span>
+                  </span>
+                </p>
+              </div>
+
+              <p class="border-solid border-t w-full my-2 border-[#696cff]"> </p>
+
+              <div class="total-cart-calculation">
+                <p class="flex w-full justify-between duration-200 text-slate-600 mt-1 leading-5">
+                  <span class="product-name font-semibold pr-1 text-slate-600 leading-4">
+                    Total Amount:</span>
+                  <span class="leading-3">
+                    <span class="font-bold text-red-400 total_amount" id="total_amount">110.00</span>
+                    <span class="px-1 capitalize">bdt.</span>
+                  </span>
+                </p>
+              </div>
+
+              <div class="mt-4 w-full flex flex-row justify-between items-center">
+                <button id="confirm_order_btn"
+                  class="confirm_order_btn uppercase w-full text-center text-lg font-mono font-bold text-slate-50 py-1 bg-[#696cffdd] duration-500 hover:tracking-wider hover:bg-[#696cff] shadow-[0_0_0.25rem_0.05rem_rgba(105,108,255,0.1);] rounded-md">Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    $(document).ready(function () {
+      const subtotal = {
+        cartProductItems: [],
+        couponDiscount: 0,
+        voucherDiscount: 0,
+        deliveryCharge: 0,
+        cartProductsTotalPrices: []
+      }
+
+      const coupon = $(".coupon");
+      const voucher = $(".voucher");
+      const cart_item = $(".cart_item");
+      const total_amount = $(".total_amount");
+      const product_price = $(".product_price");
+      const delivery_charge = $(".delivery_charge");
+      const coupon_discount = $(".coupon_discount");
+      const voucher_discount = $(".voucher_discount");
+      const confirm_order_btn = $(".confirm_order_btn");
+      const products_total_cost = $(".products_total_cost");
+      const product_decrement_btn = $(".product_decrement_btn");
+      const product_increment_btn = $(".product_increment_btn");
+      const subtotal_products_prices = $(".subtotal_products_prices");
+      const subtotal_products_quantity = $(".subtotal_products_quantity");
+      const product_available_quantity = $(".product_available_quantity");
+
+      product_decrement_btn.click(function (event) {
+        const getElement = (el) => paramElement(event, el);
+
+        const decrementTotalPrice = Number(getElement('product_price').text());
+        const decrementTotalQty = Number(getElement('product_selected_quantity').val());
+        const decrementAvailQty = Number(getElement('product_available_quantity').text());
+        const decrementTotalsCost = Number(getElement('products_total_cost').text());
+
+        if (decrementTotalQty > 1) {
+          getElement('product_available_quantity').text(decrementAvailQty + 1);
+          getElement('product_selected_quantity').val(decrementTotalQty - 1);
+          getElement('products_total_cost').text(decrementTotalPrice * (decrementTotalQty - 1));
+        }
+
+        CartSummeryCalculation();
+      });
+
+      product_increment_btn.click(function (event) {
+        const getElement = (el) => paramElement(event, el);
+
+        const incrementTotalPrice = Number(getElement('product_price').text());
+        const incrementTotalsCost = Number(getElement('products_total_cost').text());
+        const incrementAvailQty = Number(getElement('product_available_quantity').text());
+        const incrementTotalQty = Number(getElement('product_selected_quantity').val());
+
+        if (incrementAvailQty > 0) {
+          getElement('product_available_quantity').text(incrementAvailQty - 1);
+          getElement('product_selected_quantity').val(incrementTotalQty + 1);
+          getElement('products_total_cost').text(incrementTotalPrice * (incrementTotalQty + 1));
+        }
+
+        CartSummeryCalculation();
+      });
+
+
+      $('.cart_checkbox').click(CartSummeryCalculation);
+
+
+      function CartSummeryCalculation() {
+        let subTotalQty = [];
+        let subTotalPrices = [];
+
+        $('.cart_checkbox').each(function (_, element) {
+          if ($(element).prop('checked')) {
+            subTotalQty.push(
+              Number($(`#${$(element).closest('.cart_item').attr('id')} #product_selected_quantity`).val())
+            );
+
+            subTotalPrices.push(
+              Number($(`#${$(element).closest('.cart_item').attr('id')} #products_total_cost`).text())
+            );
+          }
+        });
+
+        let getSubTotalQty = sum(subTotalQty);
+        let getSubTotalPrices = sum(subTotalPrices);
+
+        subtotal_products_prices.text(getSubTotalPrices);
+        subtotal_products_quantity.text(getSubTotalQty);
+
+        const deliveryCharge = Number($('#delivery_charge').text());
+        const totalAmount = deliveryCharge + getSubTotalPrices;
+        total_amount.text(totalAmount)
+
+        return { getSubTotalQty, getSubTotalPrices, totalAmount };
+      }
+
+      function sum(sumArr = []) {
+        let val = 0;
+        for (var i = 0; i < sumArr.length; i++) {
+          val += sumArr[i]
+        }
+
+        return val;
+      }
+
+      /** 
+       * @param GET the `DOM` of the Second Parameter's attribute of ID 
+       * 
+       * */
+      const paramElement = (event, getEl) => $(`#${$(event.target).closest('.cart_item').attr('id')} #${getEl}`);
+
+
+      $('img').attr('src', 'https://images.unsplash.com/photo-1491841573634-28140fc7ced7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJvb2tzfGVufDB8fDB8fHww&auto=format&fit=crop&w=700&q=60');
+
+      const logo = `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    width="100%" viewBox="0 0 3842 1190" enable-background="new 0 0 3842 1190" xml:space="preserve">
+    <path fill="#FFFFFF" opacity="1.000000" stroke="none" 
+      d="
+    M3844.000000,1110.000000 
+      C3844.000000,1137.326660 3844.000000,1164.653442 3844.000000,1192.000000 
+      C2737.274658,1192.000000 1630.549194,1192.000000 522.928345,1191.286377 
+      C523.469910,1187.957886 524.985962,1185.383057 526.332031,1182.722046 
+      C556.955444,1122.185181 587.546997,1061.632446 618.172119,1001.096375 
+      C647.896484,942.340759 677.675659,883.612793 707.386597,824.850403 
+      C737.847656,764.604431 768.243103,704.325439 798.689331,644.072021 
+      C828.685730,584.709045 858.706909,525.358643 888.722412,466.005371 
+      C920.239075,403.683807 951.769043,341.368988 983.278931,279.044037 
+      C997.082764,251.740662 1010.866455,224.427078 1024.627197,197.101959 
+      C1029.050537,188.318451 1033.370850,179.483047 1038.020996,170.100983 
+      C962.480164,170.100983 888.252808,170.100983 813.963867,170.100983 
+      C799.184692,199.156204 784.524719,227.867630 769.962646,256.628601 
+      C739.617798,316.561646 709.332458,376.524841 679.008240,436.468323 
+      C648.834473,496.114319 618.603821,555.731567 588.472717,615.399048 
+      C567.334717,657.257935 546.329102,699.183594 525.235474,741.064880 
+      C523.985291,743.546997 522.477478,745.899353 520.614197,749.138550 
+      C511.172302,730.777100 502.135345,713.403564 493.276855,695.939575 
+      C463.640411,637.512939 434.046478,579.064819 404.476685,520.604431 
+      C373.705963,459.769928 342.936615,398.934631 312.251526,338.056915 
+      C285.156281,284.301300 258.182465,230.484482 231.132324,176.706116 
+      C229.959503,174.374435 228.558746,172.157440 227.136612,169.663300 
+      C223.283722,169.663300 219.629196,169.663300 215.974655,169.663300 
+      C148.978455,169.663300 81.982246,169.657059 14.986048,169.677719 
+      C10.657332,169.679062 6.328681,169.887756 2.000000,170.000000 
+      C2.000000,114.012978 2.000000,58.025948 2.000000,2.000000 
+      C1130.725464,2.000000 2259.450928,2.000000 3389.239258,2.926701 
+      C3390.302002,102.289116 3390.302002,200.724838 3390.302002,299.835754 
+      C3353.688965,299.835754 3318.494385,299.835754 3282.930908,299.835754 
+      C3282.930908,352.267548 3282.930908,404.015717 3282.930908,456.737976 
+      C3318.986328,456.737976 3354.452637,456.737976 3390.331543,456.737976 
+      C3390.331543,461.362976 3390.316406,465.013428 3390.333984,468.663757 
+      C3390.774658,560.553650 3391.123291,652.444275 3391.776367,744.332703 
+      C3391.863281,756.571533 3392.838623,768.891052 3394.527344,781.016541 
+      C3401.630127,832.018127 3416.338867,880.668335 3439.963135,926.593018 
+      C3469.443604,983.901855 3509.512939,1031.694702 3564.146240,1066.611450 
+      C3596.464600,1087.266479 3631.376221,1101.076416 3669.526123,1106.356079 
+      C3690.961426,1109.322510 3712.494385,1109.755127 3734.085938,1109.720703 
+      C3770.723633,1109.662476 3807.362061,1109.891602 3844.000000,1110.000000 
+    M1365.595947,1125.673340 
+      C1377.536377,1125.228394 1389.481079,1124.877197 1401.416260,1124.321289 
+      C1440.871582,1122.483765 1477.950317,1111.496460 1512.899902,1093.677002 
+      C1549.906494,1074.808716 1582.494507,1049.899902 1611.108521,1019.607239 
+      C1639.898804,989.128113 1663.339844,955.052185 1682.254150,917.793518 
+      C1716.547974,850.239258 1734.920410,778.262695 1739.441772,702.895203 
+      C1742.109863,658.419189 1740.543701,613.940063 1734.441284,569.638428 
+      C1725.793579,506.859100 1707.472168,447.291687 1677.909790,391.186584 
+      C1654.711548,347.159760 1625.161621,308.034668 1587.146973,275.840637 
+      C1517.899658,217.196182 1438.219238,190.832199 1347.299561,199.529404 
+      C1308.709595,203.220856 1272.651733,214.453018 1238.495483,232.443268 
+      C1184.076782,261.105774 1140.601440,301.915558 1105.802368,352.241669 
+      C1069.431763,404.840485 1045.625977,462.910553 1031.146729,525.022034 
+      C1022.002625,564.247742 1017.130981,604.002075 1016.466125,644.216064 
+      C1016.142151,663.811096 1017.220032,683.429321 1017.662109,703.037048 
+      C1018.231995,728.315247 1021.856201,753.282227 1026.634277,778.005432 
+      C1036.652954,829.844788 1053.899292,879.275574 1078.715088,925.938782 
+      C1108.697632,982.316895 1148.725342,1030.175903 1200.932495,1067.274170 
+      C1238.211182,1093.764282 1278.890991,1112.890137 1324.370239,1120.488281 
+      C1337.409912,1122.666748 1350.596436,1123.966919 1365.595947,1125.673340 
+    M2781.668945,875.000122 
+      C2781.668945,788.349854 2781.637939,701.699585 2781.690430,615.049316 
+      C2781.703857,592.724792 2783.717773,570.586670 2790.496338,549.199646 
+      C2801.504639,514.468079 2819.534424,484.346436 2849.788086,462.858521 
+      C2873.355713,446.119110 2899.711670,437.687897 2928.646729,440.665710 
+      C2963.232178,444.225098 2990.475098,461.839264 3012.029297,488.406250 
+      C3038.974121,521.617554 3052.189453,560.045654 3052.244385,602.642578 
+      C3052.457031,767.611755 3052.331055,932.581421 3052.331055,1097.550903 
+      C3052.331055,1101.408447 3052.331055,1105.265991 3052.331055,1109.254395 
+      C3113.584717,1109.254395 3173.448242,1109.254395 3234.338135,1109.254395 
+      C3234.338135,1104.970947 3234.338135,1101.065308 3234.338135,1097.159668 
+      C3234.338135,935.856201 3234.392578,774.552612 3234.251221,613.249268 
+      C3234.237549,597.660522 3233.218262,582.060608 3232.303955,566.487061 
+      C3229.934570,526.136230 3221.243652,487.060791 3207.588379,449.098206 
+      C3184.934326,386.118317 3150.911377,330.523865 3100.361328,285.848450 
+      C3076.782715,265.009949 3050.649658,248.120346 3021.766357,235.528381 
+      C2980.065430,217.348389 2936.621338,211.198532 2891.394043,215.564362 
+      C2856.496826,218.933044 2823.907471,229.366455 2793.010010,245.528152 
+      C2762.974609,261.238708 2736.563721,281.756287 2713.178955,306.242035 
+      C2710.295898,309.260681 2707.199219,312.075348 2703.866699,315.309540 
+      C2683.910400,286.803741 2664.670410,259.320923 2645.306641,231.661423 
+      C2637.779053,231.661423 2630.458496,231.621002 2623.138428,231.672653 
+      C2615.652832,231.725464 2608.167725,231.868530 2600.827148,231.970078 
+      C2600.827148,525.062256 2600.827148,816.876648 2600.827148,1109.172607 
+      C2661.114746,1109.172607 2720.906250,1109.172607 2781.668945,1109.172607 
+      C2781.668945,1031.449097 2781.668945,954.224670 2781.668945,875.000122 
+    M2047.091309,847.843018 
+      C2036.901733,833.299072 2029.643555,817.338562 2023.703491,800.654358 
+      C2013.191406,771.127808 2010.595825,740.347168 2010.518066,709.503662 
+      C2010.126099,553.868774 2010.338013,398.232330 2010.338013,242.596451 
+      C2010.338013,239.076645 2010.338013,235.556839 2010.338013,232.146561 
+      C1977.397949,230.184097 1838.545410,231.071686 1830.331665,233.329620 
+      C1830.331665,236.831421 1830.331787,240.464966 1830.331787,244.098511 
+      C1830.331787,399.734406 1830.406250,555.370361 1830.266846,711.006104 
+      C1830.240112,740.924255 1831.669189,770.674072 1835.561646,800.368835 
+      C1843.197998,858.625854 1860.088623,913.887390 1888.910645,965.138123 
+      C1922.029053,1024.028442 1967.746826,1070.091553 2029.279297,1099.482544 
+      C2063.301514,1115.733154 2099.322021,1123.802490 2136.807129,1125.632568 
+      C2174.589111,1127.477417 2209.787109,1117.617065 2243.353760,1101.070679 
+      C2287.948486,1079.088013 2324.129639,1046.441895 2357.670166,1010.482178 
+      C2358.458984,1009.636658 2359.441895,1008.972290 2360.460693,1008.117249 
+      C2380.513184,1042.512573 2400.221436,1076.317261 2419.668945,1109.675293 
+      C2427.930420,1109.675293 2434.927490,1109.715210 2441.924072,1109.664185 
+      C2449.077881,1109.611938 2456.231201,1109.470825 2463.174805,1109.371460 
+      C2463.174805,816.174866 2463.174805,524.340637 2463.174805,232.136566 
+      C2402.865967,232.136566 2343.051270,232.136566 2282.331543,232.136566 
+      C2282.331543,236.172592 2282.331543,239.755615 2282.331543,243.338623 
+      C2282.331543,398.974518 2282.375244,554.610474 2282.244385,710.246216 
+      C2282.234375,722.169556 2281.828369,734.208679 2280.178467,745.994202 
+      C2273.293945,795.175110 2254.172119,838.501282 2216.895264,872.473389 
+      C2188.977051,897.916748 2156.719727,907.577576 2119.321777,898.448792 
+      C2089.076660,891.066040 2066.127930,873.555908 2047.091309,847.843018 
+    z"/>
+    <path fill="#696cff" opacity="1.000000" stroke="none" 
+      d="
+    M2.000000,170.500000 
+      C6.328681,169.887756 10.657332,169.679062 14.986048,169.677719 
+      C81.982246,169.657059 148.978455,169.663300 215.974655,169.663300 
+      C219.629196,169.663300 223.283722,169.663300 227.136612,169.663300 
+      C228.558746,172.157440 229.959503,174.374435 231.132324,176.706116 
+      C258.182465,230.484482 285.156281,284.301300 312.251526,338.056915 
+      C342.936615,398.934631 373.705963,459.769928 404.476685,520.604431 
+      C434.046478,579.064819 463.640411,637.512939 493.276855,695.939575 
+      C502.135345,713.403564 511.172302,730.777100 520.614197,749.138550 
+      C522.477478,745.899353 523.985291,743.546997 525.235474,741.064880 
+      C546.329102,699.183594 567.334717,657.257935 588.472717,615.399048 
+      C618.603821,555.731567 648.834473,496.114319 679.008240,436.468323 
+      C709.332458,376.524841 739.617798,316.561646 769.962646,256.628601 
+      C784.524719,227.867630 799.184692,199.156204 813.963867,170.100983 
+      C888.252808,170.100983 962.480164,170.100983 1038.020996,170.100983 
+      C1033.370850,179.483047 1029.050537,188.318451 1024.627197,197.101959 
+      C1010.866455,224.427078 997.082764,251.740662 983.278931,279.044037 
+      C951.769043,341.368988 920.239075,403.683807 888.722412,466.005371 
+      C858.706909,525.358643 828.685730,584.709045 798.689331,644.072021 
+      C768.243103,704.325439 737.847656,764.604431 707.386597,824.850403 
+      C677.675659,883.612793 647.896484,942.340759 618.172119,1001.096375 
+      C587.546997,1061.632446 556.955444,1122.185181 526.332031,1182.722046 
+      C524.985962,1185.383057 523.469910,1187.957886 522.016479,1191.286377 
+      C522.000000,1192.000000 521.000000,1192.000000 520.163025,1191.386597 
+      C488.366852,1129.674072 457.377899,1068.589844 426.457031,1007.471375 
+      C396.734070,948.720642 367.101685,889.924011 337.392670,831.166199 
+      C307.083130,771.220764 276.718903,711.303101 246.396744,651.364014 
+      C216.374786,592.018433 186.363129,532.667480 156.369690,473.307465 
+      C125.326424,411.869751 94.310410,350.418243 63.282684,288.972656 
+      C44.846134,252.461945 26.448338,215.931519 7.897622,179.478897 
+      C6.485528,176.704102 3.991245,174.480057 2.000000,172.000000 
+      C2.000000,172.000000 2.000000,171.000000 2.000000,170.500000 
+    z"/>
+    <path fill="#696cff" opacity="1.000000" stroke="none" 
+      d="
+    M3844.000000,1109.062744 
+      C3807.362061,1109.891602 3770.723633,1109.662476 3734.085938,1109.720703 
+      C3712.494385,1109.755127 3690.961426,1109.322510 3669.526123,1106.356079 
+      C3631.376221,1101.076416 3596.464600,1087.266479 3564.146240,1066.611450 
+      C3509.512939,1031.694702 3469.443604,983.901855 3439.963135,926.593018 
+      C3416.338867,880.668335 3401.630127,832.018127 3394.527344,781.016541 
+      C3392.838623,768.891052 3391.863281,756.571533 3391.776367,744.332703 
+      C3391.123291,652.444275 3390.774658,560.553650 3390.333984,468.663757 
+      C3390.316406,465.013428 3390.331543,461.362976 3390.331543,456.737976 
+      C3354.452637,456.737976 3318.986328,456.737976 3282.930908,456.737976 
+      C3282.930908,404.015717 3282.930908,352.267548 3282.930908,299.835754 
+      C3318.494385,299.835754 3353.688965,299.835754 3390.302002,299.835754 
+      C3390.302002,200.724838 3390.302002,102.289116 3390.150879,2.926701 
+      C3450.041748,2.000000 3510.083740,2.000000 3570.912109,2.926754 
+      C3571.798828,101.834679 3571.898193,199.815857 3572.017334,297.796967 
+      C3572.017578,298.073151 3572.259766,298.383484 3572.460693,298.615540 
+      C3572.674805,298.862976 3572.974609,299.036163 3574.149414,299.956665 
+      C3605.762207,299.956665 3638.293701,299.956665 3670.964844,299.956665 
+      C3670.964844,352.420471 3670.964844,404.166412 3670.964844,456.586243 
+      C3637.703369,456.586243 3605.140381,456.586243 3571.668945,456.586243 
+      C3571.668945,460.817871 3571.668945,464.404999 3571.668945,467.992157 
+      C3571.668945,551.985229 3571.512695,635.978699 3571.738037,719.971191 
+      C3571.843262,759.204102 3582.407227,795.575989 3605.366943,827.588623 
+      C3632.392334,865.269531 3668.289062,886.927551 3716.037354,885.708862 
+      C3728.361572,885.394287 3740.700928,885.629822 3753.033203,885.667847 
+      C3783.355469,885.761475 3813.677734,885.887207 3844.000000,886.000000 
+      C3844.000000,960.041809 3844.000000,1034.083618 3844.000000,1109.062744 
+    z"/>
+    <path fill="#FFFFFF" opacity="1.000000" stroke="none" 
+      d="
+    M2.000000,172.935699 
+      C3.991245,174.480057 6.485528,176.704102 7.897622,179.478897 
+      C26.448338,215.931519 44.846134,252.461945 63.282684,288.972656 
+      C94.310410,350.418243 125.326424,411.869751 156.369690,473.307465 
+      C186.363129,532.667480 216.374786,592.018433 246.396744,651.364014 
+      C276.718903,711.303101 307.083130,771.220764 337.392670,831.166199 
+      C367.101685,889.924011 396.734070,948.720642 426.457031,1007.471375 
+      C457.377899,1068.589844 488.366852,1129.674072 519.663025,1191.386597 
+      C347.431183,1192.000000 174.862381,1192.000000 2.000000,1192.000000 
+      C2.000000,852.623840 2.000000,513.247620 2.000000,172.935699 
+    z"/>
+    <path fill="#FFFFFF" opacity="1.000000" stroke="none" 
+      d="
+    M3844.000000,885.062744 
+      C3813.677734,885.887207 3783.355469,885.761475 3753.033203,885.667847 
+      C3740.700928,885.629822 3728.361572,885.394287 3716.037354,885.708862 
+      C3668.289062,886.927551 3632.392334,865.269531 3605.366943,827.588623 
+      C3582.407227,795.575989 3571.843262,759.204102 3571.738037,719.971191 
+      C3571.512695,635.978699 3571.668945,551.985229 3571.668945,467.992157 
+      C3571.668945,464.404999 3571.668945,460.817871 3571.668945,456.586243 
+      C3605.140381,456.586243 3637.703369,456.586243 3670.964844,456.586243 
+      C3670.964844,404.166412 3670.964844,352.420471 3670.964844,299.956665 
+      C3638.293701,299.956665 3605.762207,299.956665 3574.149414,299.956665 
+      C3572.974609,299.036163 3572.674805,298.862976 3572.460693,298.615540 
+      C3572.259766,298.383484 3572.017578,298.073151 3572.017334,297.796967 
+      C3571.898193,199.815857 3571.798828,101.834679 3571.849365,2.926754 
+      C3662.597900,2.000000 3753.196045,2.000000 3844.000000,2.000000 
+      C3844.000000,296.041748 3844.000000,590.083557 3844.000000,885.062744 
+    z"/>
+    <path fill="#696cff" opacity="1.000000" stroke="none" 
+      d="
+    M1364.655762,1125.671631 
+      C1350.596436,1123.966919 1337.409912,1122.666748 1324.370239,1120.488281 
+      C1278.890991,1112.890137 1238.211182,1093.764282 1200.932495,1067.274170 
+      C1148.725342,1030.175903 1108.697632,982.316895 1078.715088,925.938782 
+      C1053.899292,879.275574 1036.652954,829.844788 1026.634277,778.005432 
+      C1021.856201,753.282227 1018.231995,728.315247 1017.662109,703.037048 
+      C1017.220032,683.429321 1016.142151,663.811096 1016.466125,644.216064 
+      C1017.130981,604.002075 1022.002625,564.247742 1031.146729,525.022034 
+      C1045.625977,462.910553 1069.431763,404.840485 1105.802368,352.241669 
+      C1140.601440,301.915558 1184.076782,261.105774 1238.495483,232.443268 
+      C1272.651733,214.453018 1308.709595,203.220856 1347.299561,199.529404 
+      C1438.219238,190.832199 1517.899658,217.196182 1587.146973,275.840637 
+      C1625.161621,308.034668 1654.711548,347.159760 1677.909790,391.186584 
+      C1707.472168,447.291687 1725.793579,506.859100 1734.441284,569.638428 
+      C1740.543701,613.940063 1742.109863,658.419189 1739.441772,702.895203 
+      C1734.920410,778.262695 1716.547974,850.239258 1682.254150,917.793518 
+      C1663.339844,955.052185 1639.898804,989.128113 1611.108521,1019.607239 
+      C1582.494507,1049.899902 1549.906494,1074.808716 1512.899902,1093.677002 
+      C1477.950317,1111.496460 1440.871582,1122.483765 1401.416260,1124.321289 
+      C1389.481079,1124.877197 1377.536377,1125.228394 1364.655762,1125.671631 
+    M1276.778198,858.242554 
+      C1283.262085,863.417419 1289.417603,869.081421 1296.282593,873.688477 
+      C1343.235718,905.198364 1392.613281,909.034973 1443.603027,884.790649 
+      C1486.901855,864.203247 1514.840088,828.845764 1533.484009,785.860107 
+      C1554.223633,738.042847 1560.588501,687.830566 1556.536499,635.944336 
+      C1554.718140,612.661194 1551.205933,589.847290 1544.171875,567.637329 
+      C1531.526123,527.708130 1512.543335,491.375641 1480.146484,463.823853 
+      C1434.517822,425.019318 1382.766357,414.234894 1325.918945,434.288696 
+      C1288.379028,447.531525 1260.857666,473.550751 1240.239014,507.083191 
+      C1214.027588,549.710876 1202.832153,596.778259 1200.438843,646.199951 
+      C1199.394287,667.771057 1200.269531,689.380737 1203.747192,710.749329 
+      C1212.879272,766.863464 1233.336304,817.474915 1276.778198,858.242554 
+    z"/>
+    <path fill="#696cff" opacity="1.000000" stroke="none" 
+      d="
+    M2781.668945,876.000183 
+      C2781.668945,954.224670 2781.668945,1031.449097 2781.668945,1109.172607 
+      C2720.906250,1109.172607 2661.114746,1109.172607 2600.827148,1109.172607 
+      C2600.827148,816.876648 2600.827148,525.062256 2600.827148,231.970078 
+      C2608.167725,231.868530 2615.652832,231.725464 2623.138428,231.672653 
+      C2630.458496,231.621002 2637.779053,231.661423 2645.306641,231.661423 
+      C2664.670410,259.320923 2683.910400,286.803741 2703.866699,315.309540 
+      C2707.199219,312.075348 2710.295898,309.260681 2713.178955,306.242035 
+      C2736.563721,281.756287 2762.974609,261.238708 2793.010010,245.528152 
+      C2823.907471,229.366455 2856.496826,218.933044 2891.394043,215.564362 
+      C2936.621338,211.198532 2980.065430,217.348389 3021.766357,235.528381 
+      C3050.649658,248.120346 3076.782715,265.009949 3100.361328,285.848450 
+      C3150.911377,330.523865 3184.934326,386.118317 3207.588379,449.098206 
+      C3221.243652,487.060791 3229.934570,526.136230 3232.303955,566.487061 
+      C3233.218262,582.060608 3234.237549,597.660522 3234.251221,613.249268 
+      C3234.392578,774.552612 3234.338135,935.856201 3234.338135,1097.159668 
+      C3234.338135,1101.065308 3234.338135,1104.970947 3234.338135,1109.254395 
+      C3173.448242,1109.254395 3113.584717,1109.254395 3052.331055,1109.254395 
+      C3052.331055,1105.265991 3052.331055,1101.408447 3052.331055,1097.550903 
+      C3052.331055,932.581421 3052.457031,767.611755 3052.244385,602.642578 
+      C3052.189453,560.045654 3038.974121,521.617554 3012.029297,488.406250 
+      C2990.475098,461.839264 2963.232178,444.225098 2928.646729,440.665710 
+      C2899.711670,437.687897 2873.355713,446.119110 2849.788086,462.858521 
+      C2819.534424,484.346436 2801.504639,514.468079 2790.496338,549.199646 
+      C2783.717773,570.586670 2781.703857,592.724792 2781.690430,615.049316 
+      C2781.637939,701.699585 2781.668945,788.349854 2781.668945,876.000183 
+    z"/>
+    <path fill="#696cff" opacity="1.000000" stroke="none" 
+      d="
+    M2047.481934,848.445374 
+      C2066.127930,873.555908 2089.076660,891.066040 2119.321777,898.448792 
+      C2156.719727,907.577576 2188.977051,897.916748 2216.895264,872.473389 
+      C2254.172119,838.501282 2273.293945,795.175110 2280.178467,745.994202 
+      C2281.828369,734.208679 2282.234375,722.169556 2282.244385,710.246216 
+      C2282.375244,554.610474 2282.331543,398.974518 2282.331543,243.338623 
+      C2282.331543,239.755615 2282.331543,236.172592 2282.331543,232.136566 
+      C2343.051270,232.136566 2402.865967,232.136566 2463.174805,232.136566 
+      C2463.174805,524.340637 2463.174805,816.174866 2463.174805,1109.371460 
+      C2456.231201,1109.470825 2449.077881,1109.611938 2441.924072,1109.664185 
+      C2434.927490,1109.715210 2427.930420,1109.675293 2419.668945,1109.675293 
+      C2400.221436,1076.317261 2380.513184,1042.512573 2360.460693,1008.117249 
+      C2359.441895,1008.972290 2358.458984,1009.636658 2357.670166,1010.482178 
+      C2324.129639,1046.441895 2287.948486,1079.088013 2243.353760,1101.070679 
+      C2209.787109,1117.617065 2174.589111,1127.477417 2136.807129,1125.632568 
+      C2099.322021,1123.802490 2063.301514,1115.733154 2029.279297,1099.482544 
+      C1967.746826,1070.091553 1922.029053,1024.028442 1888.910645,965.138123 
+      C1860.088623,913.887390 1843.197998,858.625854 1835.561646,800.368835 
+      C1831.669189,770.674072 1830.240112,740.924255 1830.266846,711.006104 
+      C1830.406250,555.370361 1830.331787,399.734406 1830.331787,244.098511 
+      C1830.331787,240.464966 1830.331665,236.831421 1830.331665,233.329620 
+      C1838.545410,231.071686 1977.397949,230.184097 2010.338013,232.146561 
+      C2010.338013,235.556839 2010.338013,239.076645 2010.338013,242.596451 
+      C2010.338013,398.232330 2010.126099,553.868774 2010.518066,709.503662 
+      C2010.595825,740.347168 2013.191406,771.127808 2023.703491,800.654358 
+      C2029.643555,817.338562 2036.901733,833.299072 2047.481934,848.445374 
+    z"/>
+    <path fill="#FEFEFE" opacity="1.000000" stroke="none" 
+      d="
+    M1276.276855,857.743164 
+      C1233.336304,817.474915 1212.879272,766.863464 1203.747192,710.749329 
+      C1200.269531,689.380737 1199.394287,667.771057 1200.438843,646.199951 
+      C1202.832153,596.778259 1214.027588,549.710876 1240.239014,507.083191 
+      C1260.857666,473.550751 1288.379028,447.531525 1325.918945,434.288696 
+      C1382.766357,414.234894 1434.517822,425.019318 1480.146484,463.823853 
+      C1512.543335,491.375641 1531.526123,527.708130 1544.171875,567.637329 
+      C1551.205933,589.847290 1554.718140,612.661194 1556.536499,635.944336 
+      C1560.588501,687.830566 1554.223633,738.042847 1533.484009,785.860107 
+      C1514.840088,828.845764 1486.901855,864.203247 1443.603027,884.790649 
+      C1392.613281,909.034973 1343.235718,905.198364 1296.282593,873.688477 
+      C1289.417603,869.081421 1283.262085,863.417419 1276.276855,857.743164 
+    z"/>
+  </svg>`
+
+      $("#logo").html(logo)
+    });
+  </script>
+</body>
+
+</html>
