@@ -1,0 +1,4 @@
+/node_modules
+/components/CountdownTimer.jsx
+yarn.lock
+/dist
