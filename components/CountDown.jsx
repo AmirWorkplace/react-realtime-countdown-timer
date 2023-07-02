@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const CountdownTimer = (starting, ending) => {
   const [nanoSeconds, setNanoSeconds] = useState(0);

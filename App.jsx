@@ -11,13 +11,7 @@ export const App = () => {
     );
   console.log(days, hours, minutes, seconds, nanoSeconds, status, message);
 
-  return (
-    <div className="w-ful min-h-screen bg-slate-900 text-slate-100 flex items-center justify-center">
-      <h1 className="text-5xl">
-        <p>Hello</p>
-      </h1>
-    </div>
-  );
+  return null;
 };
 
 export default App;

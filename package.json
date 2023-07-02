@@ -14,5 +14,13 @@
     "react": "^18.2.0",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0"
-  }
+  },
+  "name": "react-realtime-countdown-timer",
+  "version": "1.0.1",
+  "description": "my countdown timer library",
+  "main": "index.js",
+  "repository": "git@github.com:AmirWorkplace/react-realtime-countdown-timer.git",
+  "author": "AmirWorkplace <amirralli300400@gmail.com>",
+  "license": "MIT",
+  "private": false
 }
