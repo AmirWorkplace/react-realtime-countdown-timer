@@ -25,7 +25,7 @@ yarn add react-realtime-countdown-timer
 
 <br/>
 
-## How to use (using realtime `starting` & `ending` Date)
+## How to use in react.js (using realtime `starting` & `ending` Date)
 
 ```
 import CountdownTimer from "react-realtime-countdown-timer"
@@ -115,7 +115,7 @@ const { days, hours, minutes, seconds, nanoSeconds, status, message } =
 
 ### If you are use it in a html page or using others pages with `<script></script>` tag linking
 
-- Simply You can do -----
+- Simply You can do `(copy this code and paste your "index.html" file of the root directory.)`
 
 ```
 <!DOCTYPE html>
