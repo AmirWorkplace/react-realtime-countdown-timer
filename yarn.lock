@@ -1633,6 +1633,15 @@ react-realtime-countdown-timer@^1.0.2:
     react "^18.2.0"
     react-dom "^18.2.0"
 
+react-realtime-countdown-timer@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-realtime-countdown-timer/-/react-realtime-countdown-timer-1.0.4.tgz#fa465ca72a70bb29552eac653ac2a465a30b9487"
+  integrity sha512-xyWasGPtdphnhDZJt1zgzvfkOehZD25NguwNEKYsZe3BNDRFQL3c9ShW0EOBQLmseJNWFkNgyy4nXTpj4pPemw==
+  dependencies:
+    react "^18.2.0"
+    react-dom "^18.2.0"
+    react-realtime-countdown-timer "^1.0.2"
+
 react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"

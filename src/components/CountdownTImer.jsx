@@ -1,6 +1,18 @@
 import { useEffect, useState } from 'react';
 
-const CountdownTimer = (starting, ending, intervalDuration = 1000) => {
+const CountdownTimer = (
+  starting,
+  ending,
+  intervalDuration = 1000,
+  duration
+) => {
+  useEffect(() => {
+    if (duration) {
+      starting = new Date();
+      ending = new Date(starting.getTime() + duration);
+    }
+  }, []);
+
   const [nanoSeconds, setNanoSeconds] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -33,6 +45,10 @@ const CountdownTimer = (starting, ending, intervalDuration = 1000) => {
       if (mainDate <= 0) {
         clearInterval(intervalId);
         setStatus(!status);
+        if (duration) {
+          setMessage(`Timer has ended After ${duration} MilliSeconds!`);
+          return;
+        }
         setMessage(`Timer has ended at: ${ending}`);
         return;
       }
@@ -55,14 +71,3 @@ const CountdownTimer = (starting, ending, intervalDuration = 1000) => {
 };
 
 export default CountdownTimer;
-
-/**
- * 
-  const { days, hours, minutes, seconds, nanoSeconds, status, message } =
-    CountdownTimer(
-      * @param Staring time Parameter---  
-      "Wed Jun 28 2023 23:00:00 GMT+0600 (Bangladesh Standard Time)",
-      * @param Ending time Parameter---  
-      "Wed Jul 30 2023 18:00:00 GMT+0600 (Bangladesh Standard Time)"
-    );
-*/

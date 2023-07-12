@@ -1,19 +1,19 @@
 {
   "name": "react-realtime-countdown-timer",
   "private": false,
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "git-push-master": "git add . && git commit -m 'use npm push command' && git push origin master && ls && git status && npm publish"
+    "git-push-master": "git add . && git commit -m 'use npm push command' && git push origin master && ls && git status"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-realtime-countdown-timer": "^1.0.2"
+    "react-realtime-countdown-timer": "^1.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
