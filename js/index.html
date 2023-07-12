@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Realtime Countdown Timer (NPM Packages - 'react-realtime-countdown-timer')</title>
+
+  <style>
+    body {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    #message {
+      margin-right: 20px;
+    }
+
+    #container p strong span {
+      margin-right: 10px;
+      color: red;
+    }
+
+    h1 {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Countdown Timer:</h1><br>
+  <div id="container">
+    <p>
+      <span id="message"></span>
+      <strong>Days: <span id="days"></span></strong>
+      <strong>Hours: <span id="hours"></span></strong>
+      <strong>Minutes: <span id="minutes"></span></strong>
+      <strong>Seconds: <span id="seconds"></span></strong>
+      <strong>Milliseconds: <span id="milliSeconds"></span></strong>
+    </p>
+  </div>
+
+  <div id="container" realtime>
+    <p>
+      <span id="message"></span>
+      <strong>Days: <span id="days"></span></strong>
+      <strong>Hours: <span id="hours"></span></strong>
+      <strong>Minutes: <span id="minutes"></span></strong>
+      <strong>Seconds: <span id="seconds"></span></strong>
+      <strong>Milliseconds: <span id="milliSeconds"></span></strong>
+    </p>
+  </div>
+
+  <script src="./realtime-countdown-timer.js"></script>
+  <script>
+    CountdownTimer(
+      {
+        daysElement: document.querySelector('#days'),
+        hoursElement: document.querySelector('#hours'),
+        minutesElement: document.querySelector('#minutes'),
+        secondsElement: document.querySelector('#seconds'),
+        milliSecondsElement: document.querySelector('#milliSeconds'),
+        messageElement: document.querySelector('#message'),
+      },
+      null,
+      null,
+      1000,
+      1000 * 60 * 1
+    );
+
+    CountdownTimer(
+      /** @param Define the DOM Elements--- */
+      {
+        daysElement: document.querySelector('[realtime] #days'),
+        hoursElement: document.querySelector('[realtime] #hours'),
+        minutesElement: document.querySelector('[realtime] #minutes'),
+        secondsElement: document.querySelector('[realtime] #seconds'),
+        milliSecondsElement: document.querySelector('[realtime] #milliSeconds'),
+        messageElement: document.querySelector('[realtime] #message'),
+      },
+      /** @param Staring time Parameter--- */
+      'Wed Jun 28 2023 23:00:00 GMT+0600 (Bangladesh Standard Time)',
+      /** @param Ending time Parameter--- */
+      'Wed Jul 30 2023 18:00:00 GMT+0600 (Bangladesh Standard Time)',
+      /** @param Time inter validation Duration--- */
+      1000,
+    );
+
+  </script>
+</body>
+
+</html>

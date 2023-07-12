@@ -111,7 +111,7 @@ const { days, hours, minutes, seconds, nanoSeconds, status, message } =
 
 <br/><br/><br/><br/>
 
-# USING A HTML
+# Using in HTML Pages
 
 ### If you are use it in a html page or using others pages with `<script></script>` tag linking
 
