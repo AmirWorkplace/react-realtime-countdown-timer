@@ -118,6 +118,15 @@ const { days, hours, minutes, seconds, nanoSeconds, status, message } =
 - Simply You can do `(copy this code and paste your "index.html" file of the root directory.)`
 
 ```
+<script src="./node_modules/react-realtime-countdown-timer/js/countdown.js"></script>
+<script>
+  // Initialize your 'CountdownTimer' function.
+</script>
+```
+
+- ### [For Example](#) :
+
+```
 <!DOCTYPE html>
 <html lang="en">
 
@@ -176,7 +185,7 @@ const { days, hours, minutes, seconds, nanoSeconds, status, message } =
     </p>
   </div>
 
-  <script src="./realtime-countdown-timer.js"></script>
+  <script src="./node_modules/react-realtime-countdown-timer/js/realtime-countdown-timer.js"></script>
   <script>
     CountdownTimer(
       {
