@@ -1,8 +1,9 @@
 {
   "name": "react-realtime-countdown-timer",
   "private": false,
-  "version": "2.0.1",
+  "version": "2.1.0",
   "type": "module",
+  "repository": "https://github.com/AmirWorkplace/react-realtime-countdown-timer",
   "keywords": [
     "countdown",
     "countdown-timer",
