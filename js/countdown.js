@@ -1,5 +1,3 @@
-let intervalId;
-
 const CountdownTimer = (
   {
     daysElement,
@@ -14,7 +12,9 @@ const CountdownTimer = (
   intervalDuration = 1000,
   duration
 ) => {
-  let status = true;
+  let intervalId,
+    status = true;
+
   initiallyTimerElementStatus();
 
   if (duration) {
