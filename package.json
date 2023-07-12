@@ -1,7 +1,8 @@
 {
   "name": "react-realtime-countdown-timer",
   "private": false,
-  "version": "2.1.0",
+  "version": "2.1.1",
+  "license": "MIT",
   "type": "module",
   "repository": "https://github.com/AmirWorkplace/react-realtime-countdown-timer",
   "keywords": [
